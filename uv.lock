@@ -2,6 +2,17 @@ version = 1
 revision = 3
 requires-python = ">=3.12"
 
+[manifest]
+members = [
+    "1211dobotteaching",
+    "demo-magician-python-64-master",
+]
+
+[[package]]
+name = "1211dobotteaching"
+version = "0.1.0"
+source = { virtual = "1211dobotteaching" }
+
 [[package]]
 name = "demo-magician-python-64-master"
 version = "0.1.0"
