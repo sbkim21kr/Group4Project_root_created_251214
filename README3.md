@@ -1,33 +1,63 @@
-# MES Project – Dobot Demo Integration
+# Demo Magician Python 64 Master
 
-## 📖 Overview
-This repository contains my **Manufacturing Execution System (MES) project**.  
-I initially completed one cycle of development, but I wasn’t satisfied with the structure.  
-To improve clarity and maintainability, I decided to **restart from scratch**, beginning with the **Dobot demo project** provided by my teacher.  
-
-The demo project comes pre‑stacked with the necessary **Dobot SDK libraries** (`DobotDll.dll`, `DobotDllType.py`, etc.), which serve as the foundation for robotic control and integration.
+Multi-robot PLC and vision integration project using Dobot arms, Festo sensors, and YOLOv8 camera.
 
 ---
 
-## 🎯 Goals
-- Build a clean, modular MES project from the ground up.
-- Use the Dobot SDK to control robotic arms for demo tasks.
-- Establish a framework that can be extended into full MES functionality later.
+## 🚀 Overview
+This project demonstrates how to integrate **industrial robots, PLC systems, and vision AI** into a single workflow.  
+It was developed as a trade school project to showcase automation concepts and can serve as a demo platform for sales technicians or engineers.
 
 ---
 
-## 📂 Project Structure
+## ✨ Features
+- **PLC Integration**: Communication with Mitsubishi PLC using `pymcprotocol`.
+- **Robot Control**: Playback file parsing and waypoint execution for Dobot arms.
+- **Vision System**: Logitech camera + YOLOv8 inference for defect detection.
+- **GPU Acceleration**: Automatic CUDA detection and logging of GPU memory usage.
+- **Reproducible Environment**: Clean dependency management with `pyproject.toml` and `uv sync`.
 
+---
+
+## 🛠️ Requirements
+- Python **3.13.7**
+- [uv package manager](https://github.com/astral-sh/uv)
+- Windows 10/11 (tested)
+- NVIDIA GPU with CUDA drivers (optional, for YOLO acceleration)
+
+---
+
+## 📦 Installation
+Clone the repository and install dependencies:
+
+```bash
+uv sync
 ```
-Group4Project_root_created_251214/
-├── 1211DobotSample.py       # Main demo script (waypoint sequence)
-├── DobotControl.py          # Example control script (home, PTP motions)
-├── DobotDll.dll             # Core C++ SDK library
-├── DobotDll.h               # Header file for SDK
-├── DobotDllType.py          # Python wrapper for the DLL
-├── images/                  # Supporting images
-├── __pycache__/             # Python cache
-├── .venv/                   # Virtual environment
-├── pyproject.toml           # Project configuration
-└── README.md                # Project documentation
+
+---
+
+## ▶️ Running the Project
+```bash
+uv run python 00main.py     # Orchestrates PLC + robots
+uv run python 01festo.py    # Festo sensor worker
+uv run python 02logitech.py # Vision worker with YOLOv8
+```
+
+---
+
+## 📊 Output
+- PLC ladder logic triggers robot actions.
+- Vision worker logs GPU usage and defect classification.
+- Results are printed to console and can be extended to dashboards or reports.
+
+---
+
+## 📄 License
+MIT License.
+
+---
+
+## 👤 Authors
+Sangbum Kim
+Contact: sbkim21@gmail.com
 ```

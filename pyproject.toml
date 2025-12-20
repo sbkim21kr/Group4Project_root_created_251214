@@ -1,7 +1,33 @@
 [project]
 name = "demo-magician-python-64-master"
 version = "0.1.0"
-description = "Add your description here"
+description = "Multi-robot PLC and vision integration project using Dobot, Festo sensor, and YOLOv8 camera"
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = []
+requires-python = ">=3.13"
+
+authors = [
+    { name = "Sangbum Kim", email = "sbkim21@gmail.com" }
+]
+
+license = { text = "MIT" }
+
+dependencies = [
+    "opencv-python>=4.12.0.88",   # Camera capture
+    "pymcprotocol>=0.3.0",        # PLC communication
+    "ultralytics>=8.3.240",       # YOLOv8 inference (pulls in torch automatically)
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: System :: Robotics",
+]
+
+[tool.uv]
+# Settings for uv package manager
+# Ensures reproducible installs and lockfile management
