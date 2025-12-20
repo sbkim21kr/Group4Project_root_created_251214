@@ -45,6 +45,43 @@ uv run python 02logitech.py # Vision worker with YOLOv8
 
 ---
 
+## 🔄 System Flow Diagram
+
+```text
+          +-------------------+
+          |   Mitsubishi PLC  |
+          +-------------------+
+                   |
+                   | (flags / signals)
+                   v
+        +-------------------+        +-------------------+
+        |   00main.py       |        |   01festo.py      |
+        | Robot Orchestrator|        | Festo Sensor      |
+        +-------------------+        +-------------------+
+                   |                          |
+                   |                          |
+                   v                          v
+          +-------------------+        +-------------------+
+          |   Dobot Robots    |        |   Sensor Data     |
+          +-------------------+        +-------------------+
+                   |
+                   | (camera feed)
+                   v
+        +-------------------+
+        |   02logitech.py   |
+        | Vision + YOLOv8   |
+        +-------------------+
+                   |
+                   | (defect detection / GPU logs)
+                   v
+          +-------------------+
+          |   Console Output  |
+          |   / Dashboard     |
+          +-------------------+
+```
+
+---
+
 ## 📊 Output
 - PLC ladder logic triggers robot actions.
 - Vision worker logs GPU usage and defect classification.
@@ -58,6 +95,6 @@ MIT License.
 ---
 
 ## 👤 Authors
-Sangbum Kim
+Sangbum Kim  
 Contact: sbkim21@gmail.com
 ```
