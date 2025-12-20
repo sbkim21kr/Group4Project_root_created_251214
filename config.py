@@ -41,6 +41,6 @@ ROBOT_CONFIGS = {
 }
 
 PLC_CONFIG = {
-    "ip": "192.168.0.1",   # adjust to your PLC IP
-    "port": 502,           # adjust to your PLC port
+    "ip": "192.168.3.39",   # adjust to your PLC IP
+    "port": 5051,           # adjust to your PLC port
 }
